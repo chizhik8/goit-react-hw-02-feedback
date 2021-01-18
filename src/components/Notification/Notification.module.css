@@ -1,0 +1,8 @@
+.message {
+  color: black;
+  padding: 5px 2px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}

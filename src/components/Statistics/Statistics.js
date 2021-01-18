@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Statistics.module.css';
 
 function Statistics({good,neutral,bad}) {
         
@@ -12,13 +13,13 @@ function Statistics({good,neutral,bad}) {
     
     return (
         <div>
-            <p>Statistics</p>
+            <p className={styles.title} >Statistics</p>
             <ul>
-                <li>Good:{good}</li>
-                <li>Neutral:{neutral}</li>
-                <li>Bad:{bad}</li>
-                <li>Total:{countTotalFeedback()}</li>
-                <li>Positive feedback:{countPositiveFeedbackPercentage()}%</li>
+                <li className={styles.item}>Good: {good}</li>
+                <li className={styles.item}>Neutral: {neutral}</li>
+                <li className={styles.item}>Bad: {bad}</li>
+                <li className={styles.item}>Total: {countTotalFeedback()}</li>
+                <li className={styles.item}>Positive feedback: {countPositiveFeedbackPercentage()}%</li>
             </ul>
         </div>
     )

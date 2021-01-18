@@ -1,0 +1,29 @@
+.title {
+  color: black;
+  padding: 5px;
+  text-align: left;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.item {
+  color: black;
+  padding: 2px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.item:nth-last-child(1) {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.item:nth-last-child(2) {
+  text-decoration: underline;
+  font-weight: 600;
+}
