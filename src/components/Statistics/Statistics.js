@@ -1,15 +1,14 @@
 import React from 'react'
 
-function Statistics({good,neutral,bad,total,positivePercentage}) {
+function Statistics({good,neutral,bad}) {
+        
+    function countTotalFeedback() {
+        return good + bad + neutral;
+    }
     
-//     const countTotalFeedback () => (
-//         return total.good + total.bad + total.neutral;
-//   );
-    
-//   countPositiveFeedbackPercentage()
-    
-    // console.log(total.good);
-    // console.log(positivePercentage);
+    function countPositiveFeedbackPercentage() {
+        return Number.parseInt(good/(good+neutral+bad) * 100)
+    }
     
     return (
         <div>
@@ -18,8 +17,8 @@ function Statistics({good,neutral,bad,total,positivePercentage}) {
                 <li>Good:{good}</li>
                 <li>Neutral:{neutral}</li>
                 <li>Bad:{bad}</li>
-                <li>Total:{good+neutral+bad}</li>
-                <li>Positive feedback:{Number.parseInt(good/(good+neutral+bad) * 100)}%</li>
+                <li>Total:{countTotalFeedback()}</li>
+                <li>Positive feedback:{countPositiveFeedbackPercentage()}%</li>
             </ul>
         </div>
     )

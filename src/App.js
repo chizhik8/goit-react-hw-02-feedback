@@ -16,26 +16,23 @@ export class App extends Component {
   }
 
   handleClick = (e) => {
-    const {name } = e.target;
-
+    const {name} = e.target;
     this.setState(prevState => {
       return {
         [name]: prevState[name] + 1,
       }
     })
-
-    
   }
 
   render() {
+    const { good, neutral, bad } = this.state;
     return (
       <Section title=''>
         <FeedbackOptions options={this.state} onLeaveFeedback={this.handleClick}></FeedbackOptions>     
-        {this.state.good+this.state.neutral+this.state.bad > 0 ? <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.state} positivePercentage={this.state}></Statistics> : <Notification message="No feedback given"></Notification> }
-        {/* <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.state} positivePercentage={this.state}></Statistics> */}
+        {(good+neutral+bad) > 0 ? <Statistics good={good} neutral={neutral} bad={bad}></Statistics> : <Notification message="No feedback given"></Notification> }
       </Section>
     )
   }
 }
 
-export default App
+export default App;
