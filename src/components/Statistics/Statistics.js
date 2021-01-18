@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Statistics.module.css';
 
+
 function Statistics({good,neutral,bad}) {
         
     function countTotalFeedback() {
